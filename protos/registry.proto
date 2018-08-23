@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+package registry;
+
+service Registry {
+  rpc Register (Registration) returns (RegisterResponse);
+  rpc Unregister (Registration) returns (RegisterResponse);
+
+  rpc FetchSingleService (RegistrationFetchRequest) returns (Registration);
+  rpc FetchAllServices (RegistrationFetchRequest) returns (RegistrationList);
+}
+
+message RegisterResponse {
+  required string message = 1;
+}
+
+message Registration {
+  required string name = 1;
+  optional string ipv4 = 2;
+  optional string port = 3;
+  optional string domain = 4;
+}
+
+message RegistrationList {
+  repeated Registration registrations = 1;
+}
+
+message RegistrationFetchRequest {
+  repeated Registration registrations = 1;
+  optional bool fetchAllServices = 2;
+}
