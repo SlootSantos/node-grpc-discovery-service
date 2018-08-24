@@ -4,7 +4,8 @@
   "description": "Discovery Service built w/ node.js && grpc",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently \"node server\" \"node services/databaseService\" \"node services/anyService\""
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
   "dependencies": {
     "@grpc/proto-loader": "^0.3.0",
     "axios": "^0.18.0",
+    "concurrently": "^3.6.1",
     "express": "^4.16.3",
-    "grpc": "^1.14.1",
+    "grpc": "^1.14.1"
   }
 }
