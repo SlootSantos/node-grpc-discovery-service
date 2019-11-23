@@ -8,4 +8,4 @@ Here I demonstrate the implementation of a (rudimentary) **discovery service**. 
 - npm start
 - curl http://localhost:3001
 
-#Testing lokal webhook
+# Testing lokal webhook
